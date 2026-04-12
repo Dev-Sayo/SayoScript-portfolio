@@ -1,0 +1,54 @@
+"use strict";
+
+const cursor = document.getElementById("cursor");
+const ring = document.getElementById("cursorRing");
+let mx = 0,
+  my = 0,
+  rx = 0,
+  ry = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mx = e.clientX;
+  my = e.clientY;
+  cursor.style.left = mx + "px";
+  cursor.style.top = my + "px";
+});
+
+(function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + "px";
+  ring.style.top = ry + "px";
+  requestAnimationFrame(animRing);
+})();
+
+document.querySelectorAll("a, button, .tag, .project-card").forEach((el) => {
+  el.addEventListener("mouseenter", () => {
+    cursor.style.width = "6px";
+    cursor.style.height = "6px";
+    ring.style.width = "56px";
+    ring.style.height = "56px";
+    ring.style.opacity = "0.3";
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.style.width = "12px";
+    cursor.style.height = "12px";
+    ring.style.width = "36px";
+    ring.style.height = "36px";
+    ring.style.opacity = "0.6";
+  });
+});
+
+// Scroll fade-up
+const obs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add("visible"), i * 80);
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
+
+document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));

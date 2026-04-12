@@ -1,0 +1,318 @@
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --border: #1e1e1e;
+  --accent-1: rgb(214, 242, 147);
+  --accent: #e8ff00;
+  --accent2: #ff3b3b;
+  --text: #f0f0f0;
+  --muted: #555;
+  --blue: #0356ee;
+  --mono: "Space Mono", monospace;
+  --display: "Bebas Neue", sans-serif;
+  --body: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Custom cursor */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: rgb(228, 214, 253);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.1s,
+    width 0.2s,
+    height 0.2s,
+    background 0.2s;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.15s ease,
+    width 0.3s,
+    height 0.3s,
+    opacity 0.3s;
+  opacity: 0.6;
+}
+/* Noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+}
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 4rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute;
+  bottom: -2rem;
+  right: -1rem;
+  font-family: var(--display);
+  font-size: clamp(8rem, 18vw, 22rem);
+  color: transparent;
+  -webkit-text-stroke: 1px #1a1a1a;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-1);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-tag::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-1);
+}
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(4.5rem, 9vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.hero-name span {
+  color: var(--accent-1);
+}
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #888;
+  max-width: 440px;
+  margin-bottom: 3rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--accent);
+  color: #000;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: #fff;
+  transform: translate(-2px, -2px);
+}
+.btn-outline {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--text);
+  transform: translate(-2px, -2px);
+}
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-card {
+  width: 320px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 2rem;
+  position: relative;
+}
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 2rem;
+  right: 2rem;
+  height: 2px;
+  background: var(--accent);
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.status-text {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #22c55e;
+  letter-spacing: 0.1em;
+}
+.hero-card-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.25rem 0;
+}
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+.skill-list li {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}
+.skill-list li span:last-child {
+  color: var(--accent);
+}
+.drive-to-success {
+  font-size: 3.2rem;
+  padding-left: 3rem;
+}
+.what-i-offer-box {
+  padding: 3rem;
+}
+.what-i-offer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: 1rem;
+  grid-auto-flow: dense;
+}
+.what-i-offer-card {
+  padding: 2rem;
+  min-height: 379px;
+}
+.svg-div {
+  margin-bottom: 6rem;
+}
+/* project */
+.projects-frame {
+  padding: 2rem;
+}
+.project-card {
+  margin-bottom: 3rem;
+}
+.project-inner {
+  background: var(--muted);
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+.project-image img {
+  height: 70%;
+  object-fit: cover;
+}
+/* media queries */
+@media (max-width: 900px) {
+  nav {
+    padding: 1.25rem 1.5rem;
+  }
+  nav .nav-links {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 7rem 1.5rem 3rem;
+    gap: 3rem;
+  }
+  .hero-right {
+    justify-content: flex-start;
+  }
+  .about-grid,
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  section {
+    padding: 4rem 1.5rem;
+  }
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

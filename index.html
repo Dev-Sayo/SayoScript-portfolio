@@ -1,0 +1,360 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Sayo Portfolio</title>
+  </head>
+  <body class="bg-[#00000a] text-white">
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="px-5 w-full">
+      <header
+        class="flex justify-between items-center text-[20px] text-white mt-5 bg-purple-500/20 backdrop-blur-2xl border border-white/20 rounded-2xl p-6 z-50 w-full"
+      >
+        <div class=""><a href="#">SayoScript</a></div>
+        <nav class="flex gap-5">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="#experience">Experience</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+        <div class="pr-5">
+          <div>
+            <a href="https://github.com/Dev-Sayo" target="_blank"
+              ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
+            ></a>
+          </div>
+          <div>
+            <img src="" alt="" />
+          </div>
+        </div>
+      </header>
+    </div>
+    <main>
+      <!-- hero section -->
+      <section class="hero grid grid-cols-2 items-center p">
+        <div class="hero-left">
+          <div class="hero-tag">Available for Work</div>
+          <h1 class="hero-name">Shittu<br /><span>Busayo</span></h1>
+          <p class="hero-title">FRONTEND DEV</p>
+          <p class="hero-desc">
+            I build things for the web that look sharp, load fast, and feel
+            alive. Obsessed with the details most people don't notice — until
+            they're missing.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">Hire Me!</a>
+            <a href="#contact" class="btn-outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div>
+              <span class="status-dot"></span
+              ><span class="status-text">OPEN TO OPPORTUNITIES</span>
+            </div>
+            <div class="hero-card-divider"></div>
+            <ul class="skill-list">
+              <li><span>React / Next.js</span><span>████████</span></li>
+              <li><span>TypeScript</span><span>███████░</span></li>
+              <li><span>CSS / Animation</span><span>████████</span></li>
+              <!-- <li><span>Three.js / WebGL</span><span>██████░░</span></li>
+              <li><span>Node.js</span><span>█████░░░</span></li> -->
+            </ul>
+            <div class="hero-card-divider"></div>
+            <p
+              style="
+                font-family: var(--mono);
+                font-size: 0.68rem;
+                color: var(--muted);
+                letter-spacing: 0.1em;
+              "
+            >
+              Lagos, Nigeria · UTC+1
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-bg-text">DEV</div>
+      </section>
+      <!-- About me -->
+      <section>
+        <div>
+          <h2 class="text-2xl font-bold">About</h2>
+          <p class="mt-4 text-white/80">
+            I'm a frontend developer with a passion for creating beautiful and
+            functional web experiences. With over 3 years of experience in the
+            industry, I have a strong background in HTML, CSS, Tailwind CSS,
+            JavaScript and React. I love turning design concepts into
+            pixel-perfect websites that are fast, responsive, and accessible.
+            When I'm not coding, you can find me exploring new technologies,
+            contributing to open source projects, or sharing my knowledge
+            through blogging and speaking at tech events.
+          </p>
+        </div>
+      </section>
+      <!-- my projects -->
+      <section id="projects">
+        <div class="flex justify-center mt-8">
+          <h2 class="text-2xl font-bold">Projects</h2>
+        </div>
+        <div>
+          <div class="projects-container">
+            <div class="projects-frame grid grid-flow-col grid-cols-4">
+              <div class="project-card p-4">
+                <div class="project-inner p-4 rounded-lg">
+                  <div class="project-image w-full">
+                    <img
+                      class="w-full rounded-lg"
+                      src="travelix-free-template.avif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
+                      <p>Short description of the project.</p>
+                    </div>
+                    <div>
+                      <a href="#"
+                        ><i
+                          class="fa-brands fa-github fa-lg"
+                          style="color: #fff"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="fa-regular fa-eye fa-lg"
+                          style="color: rgb(255, 255, 255)"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card p-4">
+                <div class="project-inner p-4 rounded-lg">
+                  <div class="project-image w-full">
+                    <img
+                      class="w-full rounded-lg"
+                      src="travelix-free-template.avif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
+                      <p>Short description of the project.</p>
+                    </div>
+                    <div>
+                      <a href="#"
+                        ><i
+                          class="fa-brands fa-github fa-lg"
+                          style="color: #fff"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="fa-regular fa-eye fa-lg"
+                          style="color: rgb(255, 255, 255)"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card p-4">
+                <div class="project-inner p-4 rounded-lg">
+                  <div class="project-image w-full">
+                    <img
+                      class="w-full rounded-lg"
+                      src="travelix-free-template.avif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
+                      <p>Short description of the project.</p>
+                    </div>
+                    <div>
+                      <a href="#"
+                        ><i
+                          class="fa-brands fa-github fa-lg"
+                          style="color: #fff"
+                        ></i
+                      ></a>
+                      <a href="#"
+                        ><i
+                          class="fa-regular fa-eye fa-lg"
+                          style="color: rgb(255, 255, 255)"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+      <section>
+        <div>
+          <h2 class="drive-to-success uppercase font-semibold">
+            expert services to<br /><span>drive success</span>
+          </h2>
+          <div>
+            <div class="what-i-offer-box">
+              <div class="what-i-offer">
+                <div
+                  class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
+                >
+                  <div class="svg-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-code-xml text-white/80 transition-all duration-300 group-hover:-translate-y-[5px]"
+                    >
+                      <path d="m18 16 4-4-4-4"></path>
+                      <path d="m6 8-4 4 4 4"></path>
+                      <path d="m14.5 4-5 16"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 class="uppercase text-[18px]">development</h2>
+                    <p>Turning design into</p>
+                  </div>
+                  <div>
+                    <a href="#">Learn More</a>
+                  </div>
+                </div>
+                <div
+                  class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] transition-all duration-500 hover:border-white/40 group"
+                >
+                  <div class="svg-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-panels-top-left text-white/80 transition-all duration-300 group-hover:-translate-y-[5px]"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                      <path d="M3 9h18"></path>
+                      <path d="M9 21V9"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 class="uppercase text-[18px]">development</h2>
+                    <p>Turning design into</p>
+                  </div>
+                  <div>
+                    <a href="#">Learn More</a>
+                  </div>
+                </div>
+                <div
+                  class="what-i-offer-card cursor-pointer border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
+                >
+                  <div class="svg-div">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-zap text-white/80 transition-all duration-300 group-hover:-translate-y-[5px]"
+                    >
+                      <path
+                        d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 class="uppercase text-[18px]">development</h2>
+                    <p>Turning design into</p>
+                  </div>
+                  <div>
+                    <a href="#">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQs -->
+      <section>
+        <div class="flex justify-center mt-8">
+          <h2 class="text-2xl font-bold">FAQs</h2>
+        </div>
+      </section>
+      <!-- have a project in mind -->
+      <section>
+        <div class="px-5">
+          <div class="flex justify-between items-center">
+            <div class="text-4xl">
+              <h2 class="uppercase">got a project in mind</h2>
+            </div>
+            <div class="text-[20px]">
+              <a href="#" class="underline uppercase">contact me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="bg-[#0356ee] px-5 py-4 mt-5 flex justify-between gap-1.5">
+        <div>
+          <a href="#">SayoScript</a>
+        </div>
+        <div>&copy; 2026 SayoScript. All rights reserved.</div>
+        <div>
+          <a href="https://github.com/Dev-Sayo" target="_blank"
+            ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
