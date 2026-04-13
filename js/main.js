@@ -52,3 +52,35 @@ const obs = new IntersectionObserver(
 );
 
 document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+
+// aside
+const drawer = document.getElementById("drawer");
+const overlay = document.getElementById("overlay");
+
+document.addEventListener("click", () => {
+  openMenu();
+  closeMenu();
+
+  function openMenu() {
+    drawer.classList.add("open");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    drawer.classList.remove("open");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  // Escape key closes drawer
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Reset on resize to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
+});
