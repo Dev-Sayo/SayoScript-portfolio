@@ -24,8 +24,8 @@ document.addEventListener("mousemove", (e) => {
 
 document.querySelectorAll("a, button, .tag, .project-card").forEach((el) => {
   el.addEventListener("mouseenter", () => {
-    cursor.style.width = "6px";
-    cursor.style.height = "6px";
+    cursor.style.width = "8px";
+    cursor.style.height = "8px";
     ring.style.width = "56px";
     ring.style.height = "56px";
     ring.style.opacity = "0.3";
@@ -56,31 +56,37 @@ document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
 // aside
 const drawer = document.getElementById("drawer");
 const overlay = document.getElementById("overlay");
+const menuBtn = document.getElementById("menuBtn");
+// const closeAside = document.querySelector(".close");
 
-document.addEventListener("click", () => {
-  openMenu();
-  closeMenu();
+// events
+menuBtn.addEventListener("click", openMenu);
+document.querySelector(".close").addEventListener("click", closeMenu);
+document.querySelector("#overlay").addEventListener("click", closeMenu);
 
-  function openMenu() {
-    drawer.classList.add("open");
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
+openMenu();
+closeMenu();
+
+function openMenu() {
+  drawer.classList.add("open");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu() {
+  drawer.classList.remove("open");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// Escape key closes drawer
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+
+// Reset on resize to desktop
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    closeMenu();
   }
-
-  function closeMenu() {
-    drawer.classList.remove("open");
-    overlay.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-  // Escape key closes drawer
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // Reset on resize to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) {
-      closeMenu();
-    }
-  });
 });
