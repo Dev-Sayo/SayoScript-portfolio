@@ -11,25 +11,38 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Sayo Portfolio</title>
   </head>
   <body>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
-    <header>
-      <nav
-        class="navbar flex justify-between items-center text-[20px] border border-white/20 rounded-2xl p-6 z-50 w-full"
-      >
-        <a class="nav-logo uppercase font-bold" href="#">SayoScript</a>
-        <div class="nav-links uppercase font-semibold">
-          <a href="#manifesto">Manifesto</a>
-          <a href="#projects">Skills</a>
-          <a href="#contact">Work</a>
-          <a href="#experience">Experience</a>
-          <a href="#work">Work</a>
-          <a href="blog.html">Blog</a>
-        </div>
-        <!-- <div class="nav-socials pr-5">
+    <div class="particle">
+      <header>
+        <nav
+          class="navbar flex justify-between items-center text-[20px] border border-white/20 rounded-2xl p-6 z-50 w-full"
+        >
+          <a class="nav-logo uppercase font-bold" href="#">SayoScript</a>
+          <div class="nav-links uppercase font-semibold">
+            <a href="#manifesto">Manifesto</a>
+            <a href="#projects">Skills</a>
+            <a href="#contact">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#work">contact</a>
+            <a href="blog.html">Blog</a>
+          </div>
+          <!-- <div class="nav-socials pr-5">
           <div class="flex items-center">
             <a href="https://github.com/Dev-Sayo" target="_blank"
               ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
@@ -43,31 +56,434 @@
           </div>
         </div> -->
 
-        <!-- hamburger -->
-        <button class="hamburger" id="menuBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-
-      <!-- <div class="overlay" id="overlay"></div> -->
-
-      <aside class="drawer" id="drawer">
-        <div class="aside-header">
-          <span class="my-name">SayoScript</span>
-          <button class="close">✕</button>
-        </div>
-        <nav class="aside-nav active">
-          <a class="aside-link" href="#about">About</a>
-          <a class="aside-link" href="#projects">Projects</a>
-          <a class="aside-link" href="#contact">Contact</a>
-          <a class="aside-link" href="#experience">Experience</a>
-          <a class="aside-link" href="blog.html">Blog</a>
+          <!-- hamburger -->
+          <button class="hamburger" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
-        <div class="aside-footer">
-          <h2 class="aside-footer-label">Find me on</h2>
-          <div class="aside-socials">
+
+        <!-- <div class="overlay" id="overlay"></div> -->
+
+        <aside class="drawer" id="drawer">
+          <div class="aside-header">
+            <span class="my-name">SayoScript</span>
+            <button class="close">✕</button>
+          </div>
+          <nav class="aside-nav active uppercase font-bold">
+            <a class="aside-link" href="#manifesto">Manifesto</a>
+            <a class="aside-link" href="#skill">Skills</a>
+            <a class="aside-link" href="#contact">Work</a>
+            <a class="aside-link" href="#experience">Experience</a>
+            <a class="aside-link" href="#work">contact</a>
+            <a class="aside-link" href="blog.html">Blog</a>
+          </nav>
+          <div class="aside-footer">
+            <h2 class="aside-footer-label">Find me on</h2>
+            <div class="aside-socials">
+              <a href="https://github.com/Dev-Sayo" target="_blank"
+                ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
+              ></a>
+            </div>
+          </div>
+        </aside>
+      </header>
+      <main>
+        <!-- hero section -->
+        <section class="hero-section">
+          <div class="name-header">
+            <div class="name-box">
+              <div class="name-tag">
+                <span>Busayo</span>
+              </div>
+              <div class="name-tag split flex items-center">
+                <div class="divider"></div>
+                <span>shittu</span>
+              </div>
+            </div>
+            <div class="hero-text">
+              <span>
+                I code out the design just the way they are, never missing
+                anything.
+              </span>
+            </div>
+          </div>
+          <div class="hero-bg-text">DEV</div>
+          <div class="scroll-indicator">
+            <a class="scroll-btn" href="#projects">View Work →</a>
+          </div>
+        </section>
+        <!--My Manifesto -->
+        <section style="padding-block: 4rem">
+          <div>
+            <div class="manifesto">
+              <div class="manifesto-left uppercase">
+                <h2>Manifesto</h2>
+                <span
+                  >it is way <br />
+                  more than coding.</span
+                >
+              </div>
+              <div class="manifesto-content">
+                <p>I believe technology is here to serve people.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- my skills -->
+        <section>
+          <div class="skills-header">
+            <h2
+              style="
+                translate: none;
+                rotate: none;
+                scale: none;
+                opacity: 1;
+                transform: translate(0%, -8%);
+              "
+            >
+              the
+              <br />
+              <span class="stroke">stack</span>
+            </h2>
+            <p>Tools and Dependecies</p>
+          </div>
+          <div class="stack-container">
+            <div class="stack-frame">
+              <div>HTML5</div>
+              <div>Vanilla CSS</div>
+              <div>Tailwind CSS</div>
+              <div>SCSS</div>
+              <div>JavaScript</div>
+              <div>React.js</div>
+              <div>Git</div>
+              <div>Github</div>
+              <div>Figma</div>
+              <div>VsCode</div>
+            </div>
+          </div>
+        </section>
+        <!-- my projects -->
+        <section id="projects">
+          <div class="project-header flex justify-center mt-8">
+            <strong class="uppercase">Projects</strong>
+          </div>
+          <div>
+            <div class="projects-container">
+              <div class="projects-frame grid grid-flow-col grid-cols-4"></div>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+        <section>
+          <div>
+            <h2 class="drive-to-success uppercase font-semibold">
+              expert services to<br /><span>drive success</span>
+            </h2>
+            <div>
+              <div class="what-i-offer-box">
+                <div class="what-i-offer">
+                  <div
+                    class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
+                  >
+                    <div class="svg-div">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-code-xml text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
+                      >
+                        <path d="m18 16 4-4-4-4"></path>
+                        <path d="m6 8-4 4 4 4"></path>
+                        <path d="m14.5 4-5 16"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 class="uppercase text-[18px]">development</h2>
+                      <p>Turning design into</p>
+                    </div>
+                    <div class="learn-more">
+                      <a href="#">Learn More</a>
+                    </div>
+                  </div>
+                  <div
+                    class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] transition-all duration-500 hover:border-white/40 group"
+                  >
+                    <div class="svg-div">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-panels-top-left text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
+                      >
+                        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                        <path d="M3 9h18"></path>
+                        <path d="M9 21V9"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 class="uppercase text-[18px]">development</h2>
+                      <p>Turning design into</p>
+                    </div>
+                    <div class="learn-more">
+                      <a href="#">Learn More</a>
+                    </div>
+                  </div>
+                  <div
+                    class="what-i-offer-card cursor-pointer border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
+                  >
+                    <div class="svg-div">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        height="50"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-zap text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
+                      >
+                        <path
+                          d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 class="uppercase text-[18px]">development</h2>
+                      <p>Turning design into</p>
+                    </div>
+                    <div class="learn-more">
+                      <a href="#">Learn More </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FAQs -->
+        <section id="faq" class="faq-section md:px-12">
+          <div class="faq-title uppercase">
+            FAQ <span class="bg-border"></span>
+          </div>
+          <div id="faq-list" class="flex flex-col fade-up">
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="faq-question">01 —</span> Are you available for
+                  freelance work?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes — I'm currently open to freelance and contract work. I
+                  take on a limited number of projects at a time to keep quality
+                  high. Reach out via the contact form and I'll get back to you
+                  within 24 hours.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">02 —</span> What kind of
+                  projects do you work on?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  Primarily frontend-heavy web applications — dashboards,
+                  e-commerce storefronts, design systems, landing pages, and
+                  interactive experiences. I'm most effective when design
+                  quality and code quality both matter to you.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">03 —</span> What does your
+                  process look like?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  Discovery call → scope & proposal → design review →
+                  development sprints → QA & handoff. I keep communication tight
+                  and ship iteratively so you always know where things stand. No
+                  surprises.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">04 —</span> Do you work with
+                  designers or solo?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  Both. I'm comfortable implementing from Figma files or taking
+                  a project from zero — wireframes to production. If you have an
+                  existing design team, I integrate cleanly into that workflow.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">05 —</span> How much do you
+                  charge?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  Rates depend on scope, timeline, and complexity. I work on
+                  both project-based and hourly arrangements. Get in touch with
+                  a brief description of your project and I'll send a tailored
+                  estimate.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">06 —</span> How long does a
+                  typical project take?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  A landing page or small feature: 1–2 weeks. A full web app or
+                  design system: 4–12 weeks. Timeline is always agreed on
+                  upfront and I flag risks early if scope shifts during the
+                  project.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item border-t border-b border-border">
+              <button
+                onclick="toggleFaq(this)"
+                class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
+              >
+                <span class="font-mono text-[.8rem] tracking-[.04em]"
+                  ><span class="text-accent mr-2">07 —</span> Do you offer
+                  post-launch support?</span
+                >
+                <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
+              </button>
+              <div
+                class="faq-body overflow-hidden max-h-0 transition-all duration-300"
+              >
+                <p>
+                  Yes. I offer a two-week bug-fix window after every launch at
+                  no extra cost. For ongoing maintenance and feature work, I'm
+                  available on a retainer basis — ask me about this during our
+                  initial call.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- have a project in mind -->
+        <section>
+          <div class="px-5">
+            <div class="flex justify-between items-center">
+              <div class="text-4xl">
+                <h2 class="uppercase">got a project in mind</h2>
+              </div>
+              <div class="text-[20px]">
+                <a href="#" class="underline uppercase">contact me</a>
+              </div>
+            </div>
+          </div>
+          <div style="display: none">
+            <form>
+              <div>
+                <label>Name:</label>
+                <input />
+              </div>
+              <div>
+                <label>Email:</label>
+                <input />
+              </div>
+              <div>
+                <label>Message:</label>
+                <textarea></textarea>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="bg-[#0356ee] px-5 py-4 mt-5 flex justify-between gap-1.5">
+          <div>
+            <a href="#">SayoScript</a>
+          </div>
+          <div>&copy; 2026 SayoScript. All rights reserved.</div>
+          <div>
             <a href="https://github.com/Dev-Sayo" target="_blank"
               ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
             ></a>
@@ -79,525 +495,8 @@
             ></a>
           </div>
         </div>
-      </aside>
-    </header>
-    <main>
-      <!-- hero section -->
-      <section class="hero-section">
-        <div class="name-header">
-          <div class="">
-            <div class="name-tag">
-              <span>Busayo</span>
-            </div>
-            <div class="name-tag split flex items-center">
-              <div
-                class="divider"
-                style="
-                  transform: translate(0px, 0px);
-                  translate: none;
-                  rotate: none;
-                  scale: none;
-                "
-              ></div>
-              <span>shittu</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-bg-text">DEV</div>
-        <div class="scroll-indicator">
-          <a class="scroll-btn" href="#projects">View Work →</a>
-        </div>
-      </section>
-      <!-- About me -->
-      <section>
-        <div>
-          <div class="manifesto">
-            <div class="uppercase"><h2>Manifesto</h2></div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto facilis quaerat error dicta dolore reiciendis? In,
-                dignissimos. Necessitatibus, tenetur reprehenderit laudantium
-                delectus, voluptatum ex cumque soluta optio fuga facilis
-                numquam? Aliquid, nesciunt non rerum quae quis sed culpa
-                inventore quo iure suscipit ullam? Iste assumenda cupiditate as
-                corporis odio porro magnam dignissimos nobis praesentium vitae,
-                magni illo dicta quibusdam nisi maiores impedit accusantium
-                natus vel ipsa neque. Commodi aliquid dolor dolorem alias maxime
-                laboriosam? Libero, facere ipsam, repellat quia harum ex velit
-                nisi vitae autem quo sapiente assumenda unde culpa dolores
-                accusantium reiciendis adipisci tempore eaque. Optio deleniti in
-                omnis architecto tempore sed possimus? Voluptate dolor
-                consectetur doloremque quaerat beatae harum iste sunt totam
-                sequi minima porro, aspernatur, non iusto unde eligendi, tenetur
-                laudantium ut veniam earum! Non perspiciatis eos culpa
-                reiciendis? Non, itaque? Accusantium itaque debitis incidunt
-                repellendus odio vero quas corrupti vitae commodi veritatis
-                nihil minus, quo laboriosam at labore, laborum facere harum
-                distinctio autem, ipsum maiores totam exercitationem expedita
-                libero? Aut? Natus assumenda eum perferendis ullam facere quasi
-                iure facilis, ipsum sed delectus dolore et. Officia consequatur
-                optio reprehenderit ratione! Magnam non officiis quasi illo,
-                sint est cum labore nisi laudantium. Cumque excepturi magni
-                alias et facilis, commodi labore pariatur iure ut ullam saepe
-                illu
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- my skills -->
-      <section>
-        <div class="skills-header">
-          <h2
-            style="
-              translate: none;
-              rotate: none;
-              scale: none;
-              opacity: 1;
-              transform: translate(0%, -8%);
-            "
-          >
-            the
-            <br />
-            <span class="stroke">stack</span>
-          </h2>
-        </div>
-      </section>
-      <!-- my projects -->
-      <section id="projects">
-        <div class="flex justify-center mt-8">
-          <h2 class="text-2xl font-bold">Projects</h2>
-        </div>
-        <div>
-          <div class="projects-container">
-            <div class="projects-frame grid grid-flow-col grid-cols-4">
-              <div class="project-card p-4">
-                <div class="project-inner p-4 rounded-lg">
-                  <div class="project-image w-full">
-                    <img
-                      class="w-full rounded-lg"
-                      src="travelix-free-template.avif"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
-                      <p>Short description of the project.</p>
-                    </div>
-                    <div>
-                      <a href="#"
-                        ><i
-                          class="fa-brands fa-github fa-lg"
-                          style="color: #fff"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="fa-regular fa-eye fa-lg"
-                          style="color: rgb(255, 255, 255)"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="project-card p-4">
-                <div class="project-inner p-4 rounded-lg">
-                  <div class="project-image w-full">
-                    <img
-                      class="w-full rounded-lg"
-                      src="travelix-free-template.avif"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
-                      <p>Short description of the project.</p>
-                    </div>
-                    <div>
-                      <a href="#"
-                        ><i
-                          class="fa-brands fa-github fa-lg"
-                          style="color: #fff"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="fa-regular fa-eye fa-lg"
-                          style="color: rgb(255, 255, 255)"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="project-card p-4">
-                <div class="project-inner p-4 rounded-lg">
-                  <div class="project-image w-full">
-                    <img
-                      class="w-full rounded-lg"
-                      src="travelix-free-template.avif"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <h2 class="text-[16px] font-bold">MedCheck WebApp</h2>
-                      <p>Short description of the project.</p>
-                    </div>
-                    <div>
-                      <a href="#"
-                        ><i
-                          class="fa-brands fa-github fa-lg"
-                          style="color: #fff"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="fa-regular fa-eye fa-lg"
-                          style="color: rgb(255, 255, 255)"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--  -->
-      <section>
-        <div>
-          <h2 class="drive-to-success uppercase font-semibold">
-            expert services to<br /><span>drive success</span>
-          </h2>
-          <div>
-            <div class="what-i-offer-box">
-              <div class="what-i-offer">
-                <div
-                  class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
-                >
-                  <div class="svg-div">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-code-xml text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
-                    >
-                      <path d="m18 16 4-4-4-4"></path>
-                      <path d="m6 8-4 4 4 4"></path>
-                      <path d="m14.5 4-5 16"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 class="uppercase text-[18px]">development</h2>
-                    <p>Turning design into</p>
-                  </div>
-                  <div>
-                    <a href="#">Learn More</a>
-                  </div>
-                </div>
-                <div
-                  class="what-i-offer-card cursor-pointer justify-between border border-white/10 bg-[#151517] transition-all duration-500 hover:border-white/40 group"
-                >
-                  <div class="svg-div">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-panels-top-left text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
-                    >
-                      <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-                      <path d="M3 9h18"></path>
-                      <path d="M9 21V9"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 class="uppercase text-[18px]">development</h2>
-                    <p>Turning design into</p>
-                  </div>
-                  <div>
-                    <a href="#">Learn More</a>
-                  </div>
-                </div>
-                <div
-                  class="what-i-offer-card cursor-pointer border border-white/10 bg-[#151517] p-8 transition-all duration-500 hover:border-white/40 group"
-                >
-                  <div class="svg-div">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-zap text-white/80 transition-all duration-300 group-hover:-translate-y-1.25"
-                    >
-                      <path
-                        d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 class="uppercase text-[18px]">development</h2>
-                    <p>Turning design into</p>
-                  </div>
-                  <div>
-                    <a href="#">Learn More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- FAQs -->
-      <section id="faq" class="px-6 md:px-12 py-24">
-        <div
-          class="flex items-center gap-3 font-mono text-[.72rem] tracking-[.2em] text-accent uppercase mb-4"
-        >
-          FAQ <span class="inline-block w-16 h-px bg-border"></span>
-        </div>
-        <!-- <div id="faq-list" class="flex flex-col fade-up">
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">01 —</span> Are you available
-                for freelance work?</span
-              >
-              <div class="faq-icon shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Yes — I'm currently open to freelance and contract work. I take
-                on a limited number of projects at a time to keep quality high.
-                Reach out via the contact form and I'll get back to you within
-                24 hours.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">02 —</span> What kind of
-                projects do you work on?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Primarily frontend-heavy web applications — dashboards,
-                e-commerce storefronts, design systems, landing pages, and
-                interactive experiences. I'm most effective when design quality
-                and code quality both matter to you.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">03 —</span> What does your
-                process look like?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Discovery call → scope & proposal → design review → development
-                sprints → QA & handoff. I keep communication tight and ship
-                iteratively so you always know where things stand. No surprises.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">04 —</span> Do you work with
-                designers or solo?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Both. I'm comfortable implementing from Figma files or taking a
-                project from zero — wireframes to production. If you have an
-                existing design team, I integrate cleanly into that workflow.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">05 —</span> How much do you
-                charge?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Rates depend on scope, timeline, and complexity. I work on both
-                project-based and hourly arrangements. Get in touch with a brief
-                description of your project and I'll send a tailored estimate.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">06 —</span> How long does a
-                typical project take?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                A landing page or small feature: 1–2 weeks. A full web app or
-                design system: 4–12 weeks. Timeline is always agreed on upfront
-                and I flag risks early if scope shifts during the project.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item border-t border-b border-border">
-            <button
-              onclick="toggleFaq(this)"
-              class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
-            >
-              <span class="font-mono text-[.8rem] tracking-[.04em]"
-                ><span class="text-accent mr-2">07 —</span> Do you offer
-                post-launch support?</span
-              >
-              <div class="faq-icon flex-shrink-0 w-4 h-4 relative"></div>
-            </button>
-            <div
-              class="faq-body overflow-hidden max-h-0 transition-all duration-300"
-            >
-              <p
-                class="font-mono text-[.78rem] text-[#666] leading-[1.75] pb-5 tracking-[.02em]"
-              >
-                Yes. I offer a two-week bug-fix window after every launch at no
-                extra cost. For ongoing maintenance and feature work, I'm
-                available on a retainer basis — ask me about this during our
-                initial call.
-              </p>
-            </div>
-          </div>
-        </div> -->
-      </section>
-      <!-- have a project in mind -->
-      <section>
-        <div class="px-5">
-          <div class="flex justify-between items-center">
-            <div class="text-4xl">
-              <h2 class="uppercase">got a project in mind</h2>
-            </div>
-            <div class="text-[20px]">
-              <a href="#" class="underline uppercase">contact me</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="bg-[#0356ee] px-5 py-4 mt-5 flex justify-between gap-1.5">
-        <div>
-          <a href="#">SayoScript</a>
-        </div>
-        <div>&copy; 2026 SayoScript. All rights reserved.</div>
-        <div>
-          <a href="https://github.com/Dev-Sayo" target="_blank"
-            ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
-          ></a>
-          <a href="#"
-            ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
-          ></a>
-          <a href="#"
-            ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.dots.min.js"></script>
-    <script src="vanta.globe.min.js"></script>
-    <script>
-      VANTA.DOTS({
-        el: "#background",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 0.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-      });
-    </script> -->
+      </footer>
+    </div>
     <script src="./js/main.js"></script>
     <!-- <script src="./js/lightmode.js"></script> -->
   </body>
