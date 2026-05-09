@@ -13,16 +13,6 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <title>Sayo Portfolio</title>
   </head>
   <body>
@@ -38,24 +28,9 @@
             <a href="#manifesto">Manifesto</a>
             <a href="#projects">Skills</a>
             <a href="#contact">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#work">contact</a>
-            <a href="blog.html">Blog</a>
+            <a href="#experience">Service</a>
+            <a href="/src/pages/blog.html">Blog</a>
           </div>
-          <!-- <div class="nav-socials pr-5">
-          <div class="flex items-center">
-            <a href="https://github.com/Dev-Sayo" target="_blank"
-              ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
-            ></a>
-          </div>
-        </div> -->
-
           <!-- hamburger -->
           <button class="hamburger" id="menuBtn">
             <span></span>
@@ -63,9 +38,7 @@
             <span></span>
           </button>
         </nav>
-
         <!-- <div class="overlay" id="overlay"></div> -->
-
         <aside class="drawer" id="drawer">
           <div class="aside-header">
             <span class="my-name">SayoScript</span>
@@ -75,8 +48,7 @@
             <a class="aside-link" href="#manifesto">Manifesto</a>
             <a class="aside-link" href="#skill">Skills</a>
             <a class="aside-link" href="#contact">Work</a>
-            <a class="aside-link" href="#experience">Experience</a>
-            <a class="aside-link" href="#work">contact</a>
+            <a class="aside-link" href="#experience">Service</a>
             <a class="aside-link" href="blog.html">Blog</a>
           </nav>
           <div class="aside-footer">
@@ -100,6 +72,7 @@
         <section class="hero-section">
           <div class="name-header">
             <div class="name-box">
+              <p class="uppercase">my name is</p>
               <div class="name-tag">
                 <span>Busayo</span>
               </div>
@@ -116,8 +89,15 @@
             </div>
           </div>
           <div class="hero-bg-text">DEV</div>
-          <div class="scroll-indicator">
-            <a class="scroll-btn" href="#projects">View Work →</a>
+          <div class="view-work-box">
+            <div class="scroll-indicator">
+              <a
+                class="scroll-btn"
+                href="./src/pages/View-more.html"
+                target="_blank"
+                >View Work →</a
+              >
+            </div>
           </div>
         </section>
         <!--My Manifesto -->
@@ -128,17 +108,28 @@
                 <h2>Manifesto</h2>
                 <span
                   >it is way <br />
-                  more than coding.</span
+                  more than <br />
+                  coding.</span
                 >
               </div>
-              <div class="manifesto-content">
-                <p>I believe technology is here to serve people.</p>
+              <div class="about-manifesto">
+                <p>
+                  I believe technology is here to
+                  <span class="bg-red-600">serve people</span>, not the other
+                  way around. It should meet them wherever they are, not where
+                  we think they should be.
+                </p>
+                <br /><br /><br />
+                <p>
+                  That belief is what drives everything I build. And I'm just
+                  getting started.
+                </p>
               </div>
             </div>
           </div>
         </section>
         <!-- my skills -->
-        <section>
+        <section class="tool-skills__section">
           <div class="skills-header">
             <h2
               style="
@@ -172,17 +163,155 @@
         </section>
         <!-- my projects -->
         <section id="projects">
-          <div class="project-header flex justify-center mt-8">
-            <strong class="uppercase">Projects</strong>
+          <div class="works-header flex justify-center flex-col">
+            <h2 class="uppercase">
+              SELECTED
+              <br />
+              <span class="stroke">WORKS</span>
+            </h2>
           </div>
           <div>
             <div class="projects-container">
-              <div class="projects-frame grid grid-flow-col grid-cols-4"></div>
+              <div class="projects-frame grid grid-flow-col grid-cols-4">
+                <div class="project-box">
+                  <div
+                    class="project-image-box one flex items-center justify-center"
+                  >
+                    <img
+                      class="project-img"
+                      src="images/After-login-page.png"
+                    />
+                    <img class="project-img" src="images/About-us.png" />
+                    <img
+                      class="project-img"
+                      src="images/Verify-a-product.png"
+                    />
+                  </div>
+                  <div class="projectText">
+                    <div class="pro-text-1">
+                      <h2>Frontend Engineering</h2>
+                      <div class="flex items-center gap-1">
+                        <h3>01</h3>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="pro-text-bottom">
+                      <h2>
+                        Medcheck - An Authentication and Product Verification
+                        Platform
+                      </h2>
+                      <div>
+                        <a
+                          href="https://fake-drug-verification.onrender.com/"
+                          target="_blank"
+                          >→ Learn More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box">
+                  <div
+                    class="project-image-box two item-1 flex items-center justify-center"
+                  >
+                    <img class="project-img" src="images/find-rm.png" />
+                    <img class="project-img" src="images/create-acct.png" />
+                    <img class="project-img" src="images/roompal-lp-2.png" />
+                  </div>
+                  <div class="projectText item-2">
+                    <div class="pro-text-1">
+                      <h2>Frontend Engineering</h2>
+                      <div class="flex items-center gap-1">
+                        <h3>02</h3>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="pro-text-bottom">
+                      <h2>
+                        Roompal - An Authentication and Product Verification
+                        Platform
+                      </h2>
+                      <div>
+                        <a
+                          href="https://dev-sayo.github.io/roompal/"
+                          target="_blank"
+                          >→ Learn More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box">
+                  <div
+                    class="three project-image-box flex items-center justify-center"
+                  >
+                    <img class="project-img" src="images/home.png" />
+                    <img class="project-img" src="images/all-product.png" />
+                    <img class="project-img" src="images/rido-about-us.png" />
+                  </div>
+                  <div class="projectText">
+                    <div class="pro-text-1">
+                      <h2>Frontend Engineering</h2>
+                      <div class="flex items-center gap-1">
+                        <h3>03</h3>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="pro-text-bottom">
+                      <h2>Rido-oil -An Online B2B Marketplace for Palm Oil</h2>
+                      <div>
+                        <a
+                          href="https://dev-sayo.github.io/Rido-oil/"
+                          target="_blank"
+                          >→ Learn More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-box">
+                  <div
+                    class="project-image-box four item-1 flex items-center justify-center"
+                  >
+                    <img
+                      class="project-img"
+                      src="images/After-login-page.png"
+                    />
+                    <img class="project-img" src="images/About-us.png" />
+                    <img class="project-img" src="images/" />
+                  </div>
+                  <div class="projectText item-2">
+                    <div class="pro-text-1">
+                      <h2>Frontend Engineering</h2>
+                      <div class="flex items-center gap-1">
+                        <h3>04</h3>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="pro-text-bottom">
+                      <h2>
+                        SayoScript Portfolio - A Personal Website For a Cracked
+                        Frontend Developer
+                      </h2>
+                      <div>
+                        <a
+                          href="https://sayo-script-portfolio.vercel.app/"
+                          target="_blank"
+                          >→ Learn More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="view-more-btn">
+                <a href=" ">View More</a>
+              </div>
             </div>
           </div>
         </section>
         <!--  -->
-        <section>
+        <section class="what-to-expect">
           <div>
             <h2 class="drive-to-success uppercase font-semibold">
               expert services to<br /><span>drive success</span>
@@ -212,10 +341,16 @@
                       </svg>
                     </div>
                     <div>
-                      <h2 class="uppercase text-[18px]">development</h2>
-                      <p>Turning design into</p>
+                      <h2 class="uppercase text-[1.5rem]">UI Engineering</h2>
+                      <br />
+                      <p class="text-[14px]">
+                        Building pixel-perfect, performant interfaces with
+                        React, Vue, or vanilla JS — turning specs into
+                        production-ready code.
+                      </p>
                     </div>
                     <div class="learn-more">
+                      <span>→</span>
                       <a href="#">Learn More</a>
                     </div>
                   </div>
@@ -241,10 +376,16 @@
                       </svg>
                     </div>
                     <div>
-                      <h2 class="uppercase text-[18px]">development</h2>
-                      <p>Turning design into</p>
+                      <h2 class="uppercase text-[1.5rem]">Design Systems</h2>
+                      <br />
+                      <p class="text-[14px]">
+                        Crafting scalable component libraries and token
+                        architectures that keep products consistent at any team
+                        size.
+                      </p>
                     </div>
                     <div class="learn-more">
+                      <span>→</span>
                       <a href="#">Learn More</a>
                     </div>
                   </div>
@@ -270,10 +411,15 @@
                       </svg>
                     </div>
                     <div>
-                      <h2 class="uppercase text-[18px]">development</h2>
-                      <p>Turning design into</p>
+                      <h2 class="uppercase text-[1.5rem]">Performance</h2>
+                      <br />
+                      <p class="text-[14px]">
+                        Diagnosing bottlenecks and shipping optimisations — Core
+                        Web Vitals, bundle analysis, lazy loading, and beyond.
+                      </p>
                     </div>
                     <div class="learn-more">
+                      <span>→</span>
                       <a href="#">Learn More </a>
                     </div>
                   </div>
@@ -283,14 +429,13 @@
           </div>
         </section>
         <!-- FAQs -->
-        <section id="faq" class="faq-section md:px-12">
+        <!-- <section id="faq" class="faq-section md:px-12">
           <div class="faq-title uppercase">
             FAQ <span class="bg-border"></span>
           </div>
           <div id="faq-list" class="flex flex-col fade-up">
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -311,7 +456,6 @@
 
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -334,7 +478,6 @@
 
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -357,7 +500,6 @@
 
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -379,7 +521,6 @@
 
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -402,7 +543,6 @@
 
             <div class="faq-item border-t border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -425,7 +565,6 @@
 
             <div class="faq-item border-t border-b border-border">
               <button
-                onclick="toggleFaq(this)"
                 class="faq-head w-full flex items-center justify-between gap-3 py-5 text-left bg-transparent border-none"
               >
                 <span class="font-mono text-[.8rem] tracking-[.04em]"
@@ -446,16 +585,19 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
         <!-- have a project in mind -->
         <section>
           <div class="px-5">
-            <div class="flex justify-between items-center">
-              <div class="text-4xl">
-                <h2 class="uppercase">got a project in mind</h2>
+            <div class="got-a-project">
+              <div>
+                <p class="uppercase">let's work together</p>
               </div>
-              <div class="text-[20px]">
-                <a href="#" class="underline uppercase">contact me</a>
+              <br />
+              <div class="contact-me text-[20px]">
+                <a class="font-semibold" href="mailto:shittubusayo585@gmail.com"
+                  >Get in touch</a
+                >
               </div>
             </div>
           </div>
@@ -477,25 +619,6 @@
           </div>
         </section>
       </main>
-      <footer>
-        <div class="bg-[#0356ee] px-5 py-4 mt-5 flex justify-between gap-1.5">
-          <div>
-            <a href="#">SayoScript</a>
-          </div>
-          <div>&copy; 2026 SayoScript. All rights reserved.</div>
-          <div>
-            <a href="https://github.com/Dev-Sayo" target="_blank"
-              ><i class="fa-brands fa-github fa-lg" style="color: #fff"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-linkedin fa-lg" style="color: #fff"></i
-            ></a>
-            <a href="#"
-              ><i class="fa-brands fa-whatsapp fa-lg" style="color: #fff"></i
-            ></a>
-          </div>
-        </div>
-      </footer>
     </div>
     <script src="./js/main.js"></script>
     <!-- <script src="./js/lightmode.js"></script> -->

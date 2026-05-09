@@ -33,8 +33,8 @@ document.querySelectorAll("a, button, .tag, .project-card").forEach((el) => {
   el.addEventListener("mouseleave", () => {
     cursor.style.width = "12px";
     cursor.style.height = "12px";
-    ring.style.width = "36px";
-    ring.style.height = "36px";
+    ring.style.width = "42px";
+    ring.style.height = "42px";
     ring.style.opacity = "0.6";
   });
 });
@@ -55,27 +55,25 @@ document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
 
 // aside
 const drawer = document.getElementById("drawer");
-const overlay = document.getElementById("overlay");
+// const overlay = document.getElementById("overlay");
 const menuBtn = document.getElementById("menuBtn");
 // const closeAside = document.querySelector(".close");
 
 // events
 menuBtn.addEventListener("click", openMenu);
 document.querySelector(".close").addEventListener("click", closeMenu);
-document.querySelector("#overlay").addEventListener("click", closeMenu);
+// document.querySelector("#overlay").addEventListener("click", closeMenu);
 
 openMenu();
 closeMenu();
 
 function openMenu() {
   drawer.classList.add("open");
-  overlay.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
   drawer.classList.remove("open");
-  overlay.classList.remove("active");
   document.body.style.overflow = "";
 }
 

@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SayoScript — Navigation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg-nav: #2a1f3d;
+        --bg-nav-hover: rgba(255, 255, 255, 0.07);
+        --nav-border: rgba(255, 255, 255, 0.08);
+        --text-primary: #ffffff;
+        --text-muted: rgba(255, 255, 255, 0.6);
+        --icon-bg: rgba(255, 255, 255, 0.1);
+        --icon-hover: rgba(255, 255, 255, 0.2);
+        --accent: #c9b8ff;
+        --sidebar-w: 280px;
+        --nav-h: 64px;
+        --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        font-family: "DM Sans", sans-serif;
+        background: #1a1228;
+        color: var(--text-primary);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      /* =============================================
+       DESKTOP NAVBAR
+    ============================================= */
+      .navbar {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 48px);
+        max-width: 1100px;
+        height: var(--nav-h);
+        background: var(--bg-nav);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        gap: 12px;
+        z-index: 500;
+        border: 1px solid var(--nav-border);
+      }
+
+      /* Brand */
+      .nav-brand {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+
+      /* Center links — hidden on mobile */
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 4px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+        }
+      }
+
+      .nav-link {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--text-muted);
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition:
+          background 0.18s,
+          color 0.18s;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background: var(--bg-nav-hover);
+        color: var(--text-primary);
+      }
+
+      /* Social icons — hidden on mobile */
+      .nav-socials {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+      }
+
+      @media (min-width: 768px) {
+        .nav-socials {
+          display: flex;
+        }
+      }
+
+      .social-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--icon-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        transition:
+          background 0.18s,
+          color 0.18s,
+          transform 0.15s;
+      }
+
+      .social-btn:hover {
+        background: var(--icon-hover);
+        color: var(--text-primary);
+        transform: translateY(-1px);
+      }
+
+      /* Hamburger — only on mobile */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        padding: 7px;
+        margin-left: auto;
+        border-radius: 8px;
+        transition: background 0.18s;
+      }
+
+      .hamburger:hover {
+        background: var(--bg-nav-hover);
+      }
+
+      .hamburger span {
+        display: block;
+        height: 1.5px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+
+      .hamburger span:nth-child(1) {
+        width: 20px;
+      }
+      .hamburger span:nth-child(2) {
+        width: 14px;
+      }
+      .hamburger span:nth-child(3) {
+        width: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .hamburger {
+          display: none;
+        }
+      }
+
+      /* =============================================
+       MOBILE OVERLAY
+    ============================================= */
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 600;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+        backdrop-filter: blur(2px);
+      }
+
+      .overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      @media (min-width: 768px) {
+        .overlay {
+          display: none !important;
+        }
+      }
+
+      /* =============================================
+       MOBILE SIDE DRAWER
+    ============================================= */
+      .drawer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--sidebar-w);
+        height: 100%;
+        background: var(--bg-nav);
+        z-index: 700;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: transform var(--transition);
+        border-right: 1px solid var(--nav-border);
+      }
+
+      .drawer.open {
+        transform: translateX(0);
+      }
+
+      @media (min-width: 768px) {
+        .drawer {
+          display: none;
+        }
+      }
+
+      /* Drawer header */
+      .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px 16px;
+        border-bottom: 1px solid var(--nav-border);
+      }
+
+      .drawer-brand {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .drawer-close {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 18px;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .drawer-close:hover {
+        background: var(--bg-nav-hover);
+        color: var(--text-primary);
+      }
+
+      /* Drawer nav links */
+      .drawer-nav {
+        flex: 1;
+        padding: 12px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        overflow-y: auto;
+      }
+
+      .drawer-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 16px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--text-muted);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .drawer-link:hover,
+      .drawer-link.active {
+        background: var(--bg-nav-hover);
+        color: var(--text-primary);
+      }
+
+      .drawer-link.active {
+        color: var(--accent);
+      }
+
+      .drawer-link-icon {
+        width: 18px;
+        height: 18px;
+        opacity: 0.6;
+        flex-shrink: 0;
+      }
+
+      .drawer-link:hover .drawer-link-icon,
+      .drawer-link.active .drawer-link-icon {
+        opacity: 1;
+      }
+
+      /* Drawer social icons */
+      .drawer-footer {
+        padding: 16px 20px;
+        border-top: 1px solid var(--nav-border);
+      }
+
+      .drawer-footer-label {
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.25);
+        margin-bottom: 12px;
+      }
+
+      .drawer-socials {
+        display: flex;
+        gap: 10px;
+      }
+
+      .drawer-social-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--icon-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .drawer-social-btn:hover {
+        background: var(--icon-hover);
+        color: var(--text-primary);
+      }
+
+      /* =============================================
+       PAGE CONTENT (demo)
+    ============================================= */
+      .page-content {
+        padding: calc(var(--nav-h) + 48px) 24px 60px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-text {
+        font-size: clamp(32px, 6vw, 56px);
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+      }
+
+      .hero-text span {
+        color: var(--accent);
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 36px;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        padding: 12px 28px;
+        background: var(--accent);
+        color: #1a1228;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition:
+          opacity 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-primary:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      .btn-ghost {
+        padding: 12px 28px;
+        background: var(--icon-bg);
+        color: var(--text-primary);
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 50px;
+        transition: background 0.2s;
+      }
+
+      .btn-ghost:hover {
+        background: var(--icon-hover);
+      }
+
+      /* Cards row */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 64px;
+      }
+
+      .card {
+        background: var(--bg-nav);
+        border: 1px solid var(--nav-border);
+        border-radius: 14px;
+        padding: 24px;
+      }
+
+      .card-icon {
+        font-size: 28px;
+        margin-bottom: 14px;
+      }
+
+      .card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .card-sub {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== DESKTOP NAVBAR ===== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#" class="nav-brand">SayoScript</a>
+
+      <!-- Center nav links (desktop) -->
+      <div class="nav-links">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Projects</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Experience</a>
+        <a href="#" class="nav-link">Blog</a>
+      </div>
+
+      <!-- Social icons (desktop) -->
+      <div class="nav-socials">
+        <!-- GitHub -->
+        <a href="#" class="social-btn" aria-label="GitHub">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"
+            />
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" class="social-btn" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="#" class="social-btn" aria-label="WhatsApp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+            />
+          </svg>
+        </a>
+        <!-- Raindrop / Custom -->
+        <!-- <a href="#" class="social-btn" aria-label="Portfolio">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+            />
+          </svg>
+        </a>
+      </div> -->
+
+      <!-- Hamburger (mobile only) -->
+      <button
+        class="hamburger"
+        id="menuBtn"
+        aria-label="Open menu"
+        onclick="openMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- ===== OVERLAY ===== -->
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <!-- ===== MOBILE SIDE DRAWER ===== -->
+    <aside class="drawer" id="drawer" aria-label="Mobile navigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">SayoScript</span>
+        <button
+          class="drawer-close"
+          onclick="closeMenu()"
+          aria-label="Close menu"
+        >
+          ✕
+        </button>
+      </div>
+
+      <nav class="drawer-nav">
+        <a href="#" class="drawer-link active" onclick="closeMenu()">
+          <svg
+            class="drawer-link-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
+          </svg>
+          About
+        </a>
+        <a href="#" class="drawer-link" onclick="closeMenu()">
+          <svg
+            class="drawer-link-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <path d="M8 21h8M12 17v4" />
+          </svg>
+          Projects
+        </a>
+        <a href="#" class="drawer-link" onclick="closeMenu()">
+          <svg
+            class="drawer-link-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+          Contact
+        </a>
+        <a href="#" class="drawer-link" onclick="closeMenu()">
+          <svg
+            class="drawer-link-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="7" width="20" height="14" rx="2" />
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+          </svg>
+          Experience
+        </a>
+        <a href="#" class="drawer-link" onclick="closeMenu()">
+          <svg
+            class="drawer-link-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+            />
+          </svg>
+          Blog
+        </a>
+      </nav>
+
+      <div class="drawer-footer">
+        <div class="drawer-footer-label">Find me on</div>
+        <div class="drawer-socials">
+          <a href="#" class="drawer-social-btn" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="drawer-social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="drawer-social-btn" aria-label="WhatsApp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="drawer-social-btn" aria-label="Portfolio">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== DEMO PAGE CONTENT ===== -->
+    <main class="page-content">
+      <h1 class="hero-text">
+        Hi, I'm Sayo.<br /><span>I build things</span><br />for the web.
+      </h1>
+      <p class="hero-sub">
+        Frontend developer & creative technologist. I craft fast, accessible,
+        and beautiful digital experiences.
+      </p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">View Projects</a>
+        <a href="#" class="btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Fast by default</div>
+          <div class="card-sub">
+            Optimised for performance. Every millisecond counts.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Design-driven</div>
+          <div class="card-sub">
+            Pixel-perfect interfaces that feel as good as they look.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">♿</div>
+          <div class="card-title">Accessible</div>
+          <div class="card-sub">
+            Built for everyone — keyboard, screen reader, and beyond.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("overlay");
+
+      function openMenu() {
+        drawer.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Active link highlighting
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      document.querySelectorAll(".drawer-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          document
+            .querySelectorAll(".drawer-link")
+            .forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      // Escape key closes drawer
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // Reset on resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    </script>
+  </body>
+</html>
