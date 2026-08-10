@@ -9,8 +9,9 @@
   --border: #1e1e1e;
   --accent-1: rgb(214, 242, 147);
   --accent: #e8ff00;
-  --accent2: #ff3b3b;
+  /* --accent2: #ff3b3b; */
   --white: #f1f1f1;
+  --cyan: #00ffff;
   --text: #f0f0f0;
   --muted: #555;
   --blue: #0356ee;
@@ -20,9 +21,9 @@
   --sidebar-w: 100%;
   --nav-h: 64px;
   --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-
+  --bg: #0a2036;
+  --bg-grid-line: rgba(162, 210, 236, 0.084);
   --foreground: var(--bg);
-  --background: var(--white);
 }
 html,
 body {
@@ -30,10 +31,21 @@ body {
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
-  background: var(--bg);
   color: var(--text);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      var(--bg-grid-line) 0 1px,
+      transparent 1px 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--bg-grid-line) 0 1px,
+      transparent 1px 24px
+    ),
+    var(--surface);
 }
-body::before {
+/* body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -41,7 +53,7 @@ body::before {
   pointer-events: none;
   z-index: 1000;
   opacity: 0.35;
-}
+} */
 /* Custom cursor */
 .cursor {
   position: fixed;
@@ -83,9 +95,10 @@ nav {
   z-index: 600;
   transition: opacity var(--transition);
   backdrop-filter: blur(2px);
+  color: var(--white);
 }
 .navbar a:hover {
-  color: var(--accent);
+  color: var(--cyan);
 }
 .hamburger {
   display: flex;
@@ -205,7 +218,7 @@ nav {
   opacity: 1;
 }
 .aside-link.active {
-  color: var(--accent);
+  color: var(--cyan);
 }
 /* Drawer social icons */
 .aside-footer {
@@ -216,7 +229,7 @@ nav {
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--cyan);
   margin-bottom: 12px;
 }
 .aside-socials {
@@ -247,9 +260,10 @@ nav {
 }
 .name-box {
   z-index: 100;
+  color: var(--white);
 }
 .name-box p {
-  color: var(--accent);
+  color: var(--text);
   font-size: 18px;
   font-weight: 600;
   padding-bottom: 5px;
@@ -268,11 +282,6 @@ nav {
   width: 180px;
   background-color: #ffffff;
   transform-origin: left;
-}
-.hero-text {
-  font-size: 24px;
-  padding-left: 1rem;
-  line-height: 1.6;
 }
 .view-work-box {
   position: relative;
@@ -431,7 +440,7 @@ nav {
 }
 .what-to-expect {
   margin-block: 4rem;
-  background: #1c1b1d;
+  /* background: #1c1b1d; */
   padding-block: 4rem;
 }
 .drive-to-success {
@@ -448,13 +457,20 @@ nav {
   width: 100%;
 }
 .what-i-offer-card {
+  border: 1px solid var(--white);
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem;
 }
+.what-i-offer-card p {
+  color: var(--white);
+}
 .what-i-offer-card:hover {
   transform: translate(-5px, -5px);
   transition: all 0.3s ease-in-out;
+}
+.learn-more a {
+  color: var(--white);
 }
 .wit-text {
   display: inline-block;
@@ -485,12 +501,9 @@ nav {
   align-items: center;
   padding: 2rem;
 }
-/* .manifesto-left {
-  padding-left: 1.5rem;
-} */
 .manifesto-left span {
   display: inline-block;
-  -webkit-text-stroke: 2px var(--accent2);
+  -webkit-text-stroke: 2px var(--white);
   -webkit-text-fill-color: transparent;
   font-size: 60px;
   font-weight: 800;
@@ -498,9 +511,7 @@ nav {
 }
 .about-manifesto {
   font-family: "Space Grotesk", sans-serif;
-  color: var(--muted);
   font-size: 20px;
-  /* max-width: 600px; */
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -541,7 +552,7 @@ nav {
 .stack-frame div {
   min-height: 180px;
   border-radius: 20px 50px;
-  border: 2px solid red;
+  border: 2px solid white;
   border-bottom: hidden var(--accent-1);
   display: inline-flex;
   padding-inline: 1em;
@@ -730,6 +741,7 @@ video {
   font-size: 100px;
   letter-spacing: 2px;
   word-spacing: 5px;
+  color: var(--cyan);
   font-weight: 500;
 }
 .contact-me {
@@ -770,23 +782,17 @@ footer {
 .address p,
 .footer-details p {
   font-size: 14px;
-  color: #777;
+  color: var(--muted);
   margin-bottom: 10px;
 }
-hr {
-  width: 90%;
-  color: #444;
-  margin: 0 auto;
-  padding-block: 1rem;
-}
-.copyright,
 .pages li a {
-  color: #777;
+  color: var(--muted);
 }
 .copyright {
   text-align: center;
   width: 100%;
   display: inline-block;
+  font-size: 18px;
 }
 /* media queries */
 @media (max-width: 1218px) {
@@ -794,13 +800,6 @@ hr {
     display: block;
     padding: 2.5rem 1.5rem 2rem;
   }
-  .hero-text {
-    padding-left: 0px;
-    margin-top: 1rem;
-  }
-  /* body {
-    padding: 1.3rem !important;
-  } */
   .manifesto-left {
     padding-left: 0px;
   }
@@ -949,6 +948,9 @@ hr {
   }
   .wit-text h2 {
     font-size: 20px;
+  }
+  .copyright {
+    font-size: 14px;
   }
 }
 @media (max-width: 375px) {
